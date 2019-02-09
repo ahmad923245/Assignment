@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .play
+        {
+            animation: moveUp 4s linear 0s 1 forwards,
+            moveRight 8s linear 4s 1 forwards,
+            moveDown 4s linear 12s 1 forwards;
+        }
+        #abcd{
+          
+            height: 70px;
+            position: absolute;
+            top: 70vh;
+            left: 20vw;
+            
+           
+        }
+      /* #copter{
+            width: 200px;
+            height: 70px;
+            position: absolute;
+            top: 70vh;
+            left: 20vw; 
+        } */
+       @keyframes moveRight{
+           from{
+               left: 20vw;
+
+           }
+           to{
+               left: 80vw;
+
+           }
+       } 
+
+      @keyframes moveDown{
+          from{
+                top: 10vh;
+                left: 80vw;
+          }
+         to{
+            top: 70vh;
+            left: 80vw;
+         } 
+      } 
+      @keyframes moveUp{
+          from{
+                top: 70vh;
+                left: 20vw;
+          }
+         to{
+             top: 10vh;
+             left: 20vw;
+         } 
+      } 
+        </style>
+</head>
+<body>
+    <button id="btn">Start Animation</button>
+    <button id="stp">Stop</button>
+    <button onClick="window.print() ">Close this window</button>
+   <img id="abcd" src="dragem.png" alt="">
+
+    <script>
+        
+        btn.onclick = ()=>{
+            abcd.classList.add("play");
+
+        }
+       stp.onclick = ()=>{
+           abcd.classList.remove("play");
+       } 
+       
+    </script>
+    
+</body>
+</html>
