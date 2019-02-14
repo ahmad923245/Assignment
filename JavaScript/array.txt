@@ -1,0 +1,6 @@
+Simple Array ==>  let arr =["ahmad",20,245,tru];
+netsed array ==> let arr =["ahmad",20,true,[zafar,20,true]];
+slice jo ha wo array main sy kch elements ko dekhany k liy use hota h ==> let new= arr.slice(1(startindex),3(startindex+agy jitni value show krwani));
+push item on right left side of array ==> arr.push("value");
+pop from right side or array ==>arr.pop();
+splice index num sy lay kr agy jitni values delete krwani h ==> arr.splice(0,2);
