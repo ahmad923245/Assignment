@@ -1,0 +1,7 @@
+reduce() ==> to add + mutipule values
+forEach() ==>counter loop
+map() ==> Array ko transform krta h 
+every() ==>har es elements ko check krta h
+find() ==>find krta h elements ko
+
+...nums

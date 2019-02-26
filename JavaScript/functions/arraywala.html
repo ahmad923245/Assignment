@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        let value = prompt("Enter Values");
+        let data = value.split(',');
+        console.log(data);
+        data.sort(function (a, b) { return a - b });
+        console.log(data);
+        let series = [];
+        let n = 0;
+        let m = data[data.length - 1] / 10;
+        for (let i = 0; i < m; i++) {
+            series[i] = data.filter((num) => { return num >= n && num <= n + 9; })
+            n += 10;
+        }
+        for (let i = 0; i < series.length; i++) {
+            series[i].sort();
+            console.log(series[i].slice(series[i].length - 2, series[i].length));
+        }
+        // console.log(series);
+    </script>
+</body>
+
+</html>

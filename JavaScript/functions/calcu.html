@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let x = +prompt("Enter 1st No ")
+        let y = +prompt("Enter 2nd No ")
+        let c = prompt("Enter oprater ")
+
+
+            function calcu(m,n,o)
+
+            {
+                
+
+                switch(o){
+                case '+': 
+                return plus(m,n)      
+                case '-':
+                return minas(m,n)
+                case '*':
+                return multi(m,n)
+                   
+                case '/':
+                return devide(m,n)
+
+                }
+                    
+
+                
+            }
+    function plus(x,y){
+
+        return x+y;
+    }
+    function minas(x,y){
+
+        return x-y;
+}
+function multi(x,y){
+
+return x*y;
+}
+function devide(x,y){
+
+return x/y;
+}
+
+//  var p= calcu(+prompt("Enter a value"),+prompt("Enter a 2 value"),+prompt("Enter oprater"))
+   var p = calcu(x,y,c);
+   document.write(p);
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let fruits=["Apple","Bnana","banan2","apricot"];
+        let ffruits=filterfruits('A');
+        console.log(ffruits);
+
+        // function isAvailable(fruitname){
+        //     let availble=fruits.find(function (fruit){
+        //         if(fruit==fruitname.trim()){
+        //             return true;
+        //         }
+        //     });
+        //     return availble == undefined ? "Sorry Not Availble" : "Kitna chahiy?";
+
+        // }
+        function filterfruits(letter){
+            let filterdfruits=fruits.filter(function (fruits1){
+                if(fruits1.charAt(0) == letter){
+                    return true;
+                }
+            });
+
+        }
+
+
+
+    </script>
+</body>
+</html>

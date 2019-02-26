@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+    let data=["Apple","Bnana","Orange","Mango","Apricot"];
+    
+    
+        console.log();
+   
+
+    function isAvailable(fruitname1){
+
+            let availble=data.find(function (item1){
+                if(item1==fruitname1){
+                    return item1;
+                }
+            })
+            return availble == undefined ? "Sorry Not Availble" : "Kitna chahiy?";
+    
+    }
+    let newdata=isAvailable(prompt("Enter Fruits with coma"));
+ 
+   
+       
+
+  
+
+    
+    
+    </script>
+    
+</body>
+</html>

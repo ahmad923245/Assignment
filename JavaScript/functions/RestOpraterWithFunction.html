@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        //Rest Oprater for Add dynamic Parameters 
+        function sumAll(...nums) {
+            let t = 0;
+            nums.forEach(function (item) {
+                t += item;
+            })
+            return t;
+
+        }
+
+
+
+
+        //Spread Function Jo k Function ko call krty time dena h function
+        let args = [1, 2, 3];
+
+        function spreadItem(a, b, c) {
+            return a + " " + b + " " + c;
+
+
+        }
+        spreadItem(...args);
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
