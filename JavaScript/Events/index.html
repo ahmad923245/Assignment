@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button id="btn">Click me</button>
+    
+    </div>
+ 
+
+        <img height="300px" id="myimg" src="yum.jpg" alt="">
+
+        <button id="tme">Yahan click Kar k Time dekho</button>
+            <div id="demo"></div>
+
+    <script>
+        tme.onclick = function(){
+            document.getElementById("demo").innerHTML ="Time is "+Date();
+        }
+        myimg.onload = myFunction;
+    function myFunction(){
+        console.log("yes this is yum yum");
+    }
+    btn.onclick = () => {
+        alert("button click huya h");
+
+    }
+document.body.onkeydown = function(abc){
+
+
+    console.log(abc);
+
+    // // if(abc.altKey && abc.shiftKey){
+    // //     alert("apny alt or shift key ko dabya h ..hat jain pangy na lain")
+       
+    // }
+}
+
+
+
+    </script>
+</body>
+</html>

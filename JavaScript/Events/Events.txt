@@ -1,0 +1,4 @@
+
+
+pagex = puri body ki height width btata h or scrolling krty hue be adjust kr ly ga
+clientX and clienty ==> ye kisi makhsoos tag ki height width ko find krny k liy use hota..

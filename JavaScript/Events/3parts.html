@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+    .mydiv{
+        height: 100vh;
+        width: auto;
+
+    }
+    </style>
+</head>
+<body>
+    <div class="mydiv">
+      
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta quisquam minus nihil nemo delectus eos repudiandae adipisci asperiores, sint quae provident modi vel et cum sapiente sed, corporis odit voluptatem!  </p>
+<p>lorem</p>
+    </div>
+    <script>  
+    let narea=window.innerHeight/2;
+    let area = window.innerWidth/3;  
+    document.body.onmousemove = function(abc){
+
+
+            if(abc.pageY < narea){
+                if(abc.pageX < area){
+                    document.body.style.backgroundColor="green";
+
+                }
+                else if(abc.pageX < area+area){
+                    document.body.style.backgroundColor="red";
+                }
+                else{
+                    document.body.style.backgroundColor="blue";
+                }
+            }
+             if(abc.pageY > narea+narea){
+                if( abc.pageX < area){
+                    document.body.style.backgroundColor="yellow";
+                }
+                else if(abc.pageX < area+area){
+                    document.body.style.backgroundColor="cyan";
+                }
+                else{
+                    
+                    document.body.style.backgroundColor="#616666";
+                
+                }
+
+            }
+
+
+        // if(abc.pageX < area){
+        //     document.body.style.backgroundColor="green";
+        // }
+        // else if(abc.pageX < area+area ){
+
+        //     document.body.style.backgroundColor="red";
+
+        // }
+        // else{
+        //     document.body.style.backgroundColor="blue";
+
+        // }
+    }
+    
+    </script>
+</body>
+</html>
