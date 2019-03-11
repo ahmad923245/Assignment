@@ -1,12 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+    <style>
+    #mydiv {
+    width: 650px;
+    height: 650px;
+  /* background-color: #39cccc; */
+  background-size: cover;
+  clip-path: polygon(0% 100%, 100% 100%, 0% 0%);
+}
+#mydiv2{
+  width: 650px;
+    height: 650px;
+  /* background-color: #39cccc; */
+  background-size: cover;
+  clip-path: polygon(0% 0%, 100% 100%, 100% 0%);
+
+}
+/* Center the demo */
+html, body { height: 100%; }
+body {
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+body {
+  background-color: #333;
+}
     
-</body>
+    </style>
+   
+    <body>
+  
+
+
+<div id="mydiv">
+
+</div>
+<div id="mydiv2">
+
+</div>
+        <script>
+          mydiv2.onmouseover = function(abc){
+            document.getElementById("mydiv2").style.backgroundColor='green';
+
+          }
+          mydiv.onmouseover = function(abc){
+            document.getElementById("mydiv").style.backgroundColor='blue';
+
+          }
+
+
+
+        </script>
+    </body>
+
+
+
+
 </html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #mydiv{
+            height: 400px;
+            width: 500px;
+            margin: auto;
+            border: 1px solid rosybrown;
+        }
+    
+    </style>
+</head>
+<body>
+    <button onclick=generatePost()>click me</button>
+    <div id="mydiv">
+        
+
+    </div>
+    <script>
+    function generatePost() {
+
+        let container = document.createElement('div');
+
+
+        let postImage = document.createElement('img');
+        postImage.src = ("ani.png");
+        container.appendChild(postImage);
+
+        mydiv.appendChild(container);
+
+
+    }
+</script>
+</body>
+</html>

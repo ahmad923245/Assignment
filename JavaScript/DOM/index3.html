@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+    
+    .fPost{
+        border:1px solid red;
+        width: min-content;
+    }
+        
+    </style>
+
+</head>
+
+<body>
+
+    <div id="some">
+
+        <button id="poster">Generate Post</button>
+
+        <!-- <input placeholder="Enter fruit" id="box1" type="text"> -->
+
+
+    </div>
+
+    <div id="posts">
+
+
+
+    </div>
+
+    <script>
+
+
+        // let poster = 10;
+        poster.onclick = generatePost;
+
+        function generatePost() {
+
+            let container = document.createElement('div');
+
+            let postCOntent = document.createElement('p');
+            postCOntent.innerText = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore quaerat aliquam debitis illo aperiam quisquam odit, accusamus aut? Sint quibusdam quas perspiciatis necessitatibus iusto, laboriosam nobis dolorem consequatur ea labore.";
+
+
+            container.setAttribute('class', 'fPost')
+
+            let postImage = document.createElement('img');
+            postImage.src = "apple.jpg";
+            container.appendChild(postImage);
+            container.appendChild(postCOntent);
+
+            posts.appendChild(container)
+
+
+        }
+
+
+
+        // let itemsRepeated = '';
+        // let main = [];
+
+        // let cData = ["a1", "b1", "c1", "a2", "b2", "c2"]
+
+        // cData.forEach(function (item) {
+
+        //     //a1 a
+        //     let ch = item.charAt(0);
+
+        //     if (itemsRepeated.includes(ch)) {
+
+        //         let target = findItem(ch);
+        //         target.push(item);
+
+        //     } else {
+        //         itemsRepeated += ch;
+        //         main.push([item])
+        //     }
+
+        // });
+
+        // //[ [a1]  ]
+
+        // function findItem(ch) {
+
+        //     for (let item of main) {
+        //         // ['a1']
+
+        //         for (cItem of item) {
+        //             if (cItem[0] == ch) {
+        //                     return item;
+        //             }
+        //         }
+
+        //     }
+
+        // }
+
+    </script>
+
+
+
+</body>
+
+</html>
