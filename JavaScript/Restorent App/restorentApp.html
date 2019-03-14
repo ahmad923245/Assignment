@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>nihari</td>
+            <td>250</td>
+            <td><input class="dish" type="checkbox"></td>
+            <td><input value="1" type="number"></td>
+        </tr>
+        <tr>
+                <td>biryani</td>
+                <td>150</td>
+                <td><input class="dish" type="checkbox"></td>
+                <td><input value="1" type="number"></td>
+            </tr>
+            <tr>
+                    <td>qorma</td>
+                    <td>350</td>
+                    <td><input class="dish" type="checkbox"></td>
+                    <td><input value="1" type="number"></td>
+                </tr>
+                <tr>
+                        <td>saag</td>
+                        <td>50</td>
+                        <td><input class="dish" type="checkbox"></td>
+                        <td><input value="1" type="number"></td>
+                    </tr>
+                    <tr>
+                            <td>channa paye</td>
+                            <td>200</td>
+                            <td><input class="dish" type="checkbox"></td>
+                            <td><input value="1" type="number"></td>
+                        </tr>
+                        <tfoot>
+                            <td><button id="takeorder">Order Taker</button></td>
+                        </tfoot>
+    </table>
+
+    <script>
+        
+    
+    takeorder.onclick = processOrder;
+    let arraydata = [];
+    function processOrder(){
+       
+        let dishes = document.getElementsByClassName('dish');
+        let bill = 0;
+     for (let item of dishes){
+         if(item.checked){
+            let name = item.parentNode.previousElementSibling.previousElementSibling.innerText;
+             bill += +item.parentNode.previousElementSibling.innerText * (item.parentNode.nextElementSibling.children[0].value);
+             console.log(name);
+       
+            
+         }
+              
+         let  arraydata1 = arraydata.push(dishes);
+        }
+        let grossbill = bill;
+        if(bill > 1000){
+           
+         grossbill = bill * (.90);
+        }
+        console.log("Total Bill: "+bill);
+        console.log("Bill with Discount : "+grossbill);
+
+
+      
+        // console.log(dishes);
+    }
+    
+    
+    
+    
+    </script>
+</body>
+</html>

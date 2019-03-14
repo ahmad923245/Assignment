@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #table_1 {
+            border: 1px solid red;
+            background-color: red;
+            margin-left: 500px;
+            margin-top: 10px;
+        }
+
+        #table_2 {
+            border: 1px solid red;
+            background-color: red;
+            margin-left: 500px;
+            margin-top: 10px;
+
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <table id="table_1">
+        <tr>
+            <td>Biryani</td>
+            <td>250</td>
+            <td><input type="checkbox" class="dish"></td>
+            <td><input value="1" type="number"></td>
+            <td><select name="select_1">
+                    <option value="1">1</option>
+                    <option value="0.5">0.5</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Nehari</td>
+            <td>400</td>
+            <td><input type="checkbox" class="dish"></td>
+            <td><input value="1" type="number"></td>
+            <td><select name="select_1">
+                    <option value="1">1</option>
+                    <option value="0.5">0.5</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Kebab</td>
+            <td>25</td>
+            <td><input type="checkbox" class="dish"></td>
+            <td><input value="1" type="number"></td>
+            <td><select name="select_1">
+                    <option value="1">1</option>
+                    <option value="0.5">0.5</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Channe</td>
+            <td>50</td>
+            <td><input type="checkbox" class="dish"></td>
+            <td><input value="1" type="number"></td>
+            <td><select name="select_1">
+                    <option value="1">1</option>
+                    <option value="0.5">0.5</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Saag</td>
+            <td>60</td>
+            <td><input type="checkbox" class="dish"></td>
+            <td><input value="1" type="number"></td>
+            <td><select name="select_1">
+                    <option value="1">1</option>
+                    <option value="0.5">0.5</option>
+                </select>
+            </td>
+        </tr>
+
+        <tfoot>
+            <td>
+                <button id="orderTaker">Order Dishes</button>
+            </td>
+        </tfoot>
+    </table>
+    <table id="table_2">
+        <tr>
+            <td><img src="" id="deal_1" class="images"></td>
+            <td>
+                <p id="para_1"></p>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="" id="deal_2" class="images"></td>
+            <td>
+                <p id="para_2"></p>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="" id="deal_3" class="images"></td>
+            <td>
+                <p id="para_3"></p>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="" id="deal_4" class="images"></td>
+            <td>
+                <p id="para_4"></p>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="" id="deal_5" class="images"></td>
+            <td>
+                <p id="para_5"></p>
+            </td>
+        </tr>
+
+    </table>
+
+    <script>
+        let order_data = {};
+        orderTaker.onclick = processDishes;
+        function processDishes() {
+            let totalBill = 0;
+            let dishes = document.querySelectorAll('input');
+            for (let dish of dishes) {
+                if (dish.checked) {
+                    let name = dish.parentNode.previousElementSibling.previousElementSibling.innerText;
+
+                    totalBill += +dish.parentNode.previousElementSibling.innerText * (dish.parentNode.nextElementSibling.children[0].value) * dish.parentNode.nextElementSibling.nextElementSibling.children[0].value;
+                    console.log("Dish Name :", name);
+                    console.log("Dish Quantity: ", dish.parentNode.nextElementSibling.nextElementSibling.children[0].value);
+                    if (name == 'Biryani'){
+                        deal_1.src = "biryani.jpg";
+                        para_1.innerText = "Biryan: "+dish.parentNode.nextElementSibling.nextElementSibling.children[0].value;
+                    }
+                    else if (name == 'Nehari'){
+                        deal_2.src = "nehari.jpg";
+                        para_2.innerText = "Nehari: "+dish.parentNode.nextElementSibling.nextElementSibling.children[0].value;
+                    }
+                    else if (name == 'Kebab'){
+                        deal_3.src = "kebab.jpg";
+                        para_3.innerText = "Kebab: "+dish.parentNode.nextElementSibling.nextElementSibling.children[0].value;
+                    }
+                    else if (name == 'Channe'){
+                        deal_4.src = "channe.jpg";
+                        para_4.innerText = "Channe: "+dish.parentNode.nextElementSibling.nextElementSibling.children[0].value;
+                    }
+                    else if (name == 'Saag'){
+                        deal_5.src = "saag.jpg";
+                        para_5.innerText = "Saag: "+dish.parentNode.nextElementSibling.nextElementSibling.children[0].value;
+                    }
+                }
+
+            }
+            console.log(order_data);
+            let netBill = totalBill;
+            if (netBill > 600)
+                netBill = netBill * 0.90;
+            console.log("Total bill:", totalBill);
+            console.log("Discounted bill :", netBill);
+
+
+
+        }
+
+    // ok.previousElementSibling
+    //ok.parentNode.nextElementSibling
+    </script>
+</body>
+
+</html>
