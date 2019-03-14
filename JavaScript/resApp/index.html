@@ -158,14 +158,15 @@
             let dishes = document.getElementsByClassName('dish');
 
             let totalBill = 0;
+            oDishes.innerHTML="";
             for (let dish of dishes) {
 
                 if (dish.checked) {
                     var name = dish.parentNode.previousElementSibling.previousElementSibling.innerHTML;
                     totalBill += +dish.parentNode.previousElementSibling.innerText * (dish.parentNode.nextElementSibling.children[0].value);
                     var z = dish.parentNode.nextElementSibling.children[0].value;
-                    oDishes.innerHTML += '<div class="box" ><span id="orderVlue" > ' + name + '(' + z + ')' + '\</span><img  src="' + name + '.jpg" /> </div>'
-
+                     oDishes.innerHTML += '<div class="box" ><span id="orderVlue" > ' + name + '(' + z + ')' + '\</span><img  src="' + name + '.jpg" /> </div>'
+                    
               let totlebill=totalBill;
 
                      var orderDishs={
@@ -198,6 +199,11 @@
 
             localStorage.clear();
 
+            dishes.forEach(item=>{
+                item.checked = false;
+                oDishes.innerHTML="";
+              
+            })
             // item.checked = false;
         }
 
