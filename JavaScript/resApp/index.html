@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+    <style>
+        .box {
+
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        img {
+            width: 200px;
+            padding: 4px;
+        }
+
+        #oDishes {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #netVlue {
+            float: right;
+            margin-right: 200px;
+            margin-top: 80px;
+            color: blue;
+            font-size: 20px;
+            background-color: orange;
+            border: 2px solid;
+            word-spacing: 10px;
+        }
+
+        #orderVlue {
+            
+            top: 380px;
+            color: blue;
+            font-size: 20px;
+
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+
+    <table>
+
+
+        <tr>
+            <td>bryani</td>
+            <td>250</td>
+            <td><input type="checkbox" name="" class="dish"></td>
+            <td><input type="number" value="1"></td>
+        </tr>
+
+        <tr>
+            <td>saag</td>
+            <td>300</td>
+            <td><input type="checkbox" name="" class="dish"></td>
+            <td><input type="number" value="1"></td>
+        </tr>
+
+        <tr>
+            <td>mutton</td>
+            <td>400</td>
+            <td><input type="checkbox" name="" class="dish"></td>
+            <td><input type="number" value="1"></td>
+        </tr>
+
+        <tr>
+            <td>chicken pey</td>
+            <td>250</td>
+            <td><input type="checkbox" name="" class="dish"></td>
+            <td><input type="number" value="1"></td>
+        </tr>
+
+        <tr>
+            <td>chicken bryani</td>
+            <td>250</td>
+            <td><input type="checkbox" name="" class="dish"></td>
+            <td><input type="number" value="1"></td>
+        </tr>
+
+
+        <tfoot>
+
+            <tr>
+                <td>
+                    <button id="btn">order Dishes</button>
+                    <button id="btnreset">Reset Order</button>
+
+
+                </td>
+            </tr>
+
+        </tfoot>
+    </table>
+
+
+
+    <div id="oDishes"></div>
+    <div id="netVlue"></div>
+    <div id="contity"></div>
+
+
+
+    <script>
+        // nextElement.sibling
+        //previousElement.sibling
+        //dish.parentNode.preveiousElementsibling.innertext
+
+      
+
+
+    //JSON SY Parse kiya h
+        let orderDish=JSON.parse(localStorage.getItem('appData')||"[]");
+
+        //Now find krny k liy
+
+        let dishes = document.querySelectorAll('.dish');
+        function findDish(dishName){
+            return orderDish.find(function(oDish){
+                if(oDish.name == dishName){
+                    return true;
+                    }
+
+            })
+
+        }
+    //forEach loop
+        dishes.forEach(function(item){
+            let newdishayge = item.parentNode.previousElementSibling.previousElementSibling.innerText;
+            let dishfound = findDish(newdishayge)
+            if(dishfound)
+            {
+                item.checked =true;
+            }
+
+        })
+          
+
+        //Khatm function find ka
+
+        // console.log(orderDish);
+
+        btn.onclick = prosessDishes;
+        btnreset.onclick = resetOrder;
+
+        function prosessDishes() {
+            let dishes = document.getElementsByClassName('dish');
+
+            let totalBill = 0;
+            for (let dish of dishes) {
+
+                if (dish.checked) {
+                    var name = dish.parentNode.previousElementSibling.previousElementSibling.innerHTML;
+                    totalBill += +dish.parentNode.previousElementSibling.innerText * (dish.parentNode.nextElementSibling.children[0].value);
+                    var z = dish.parentNode.nextElementSibling.children[0].value;
+                    oDishes.innerHTML += '<div class="box" ><span id="orderVlue" > ' + name + '(' + z + ')' + '\</span><img  src="' + name + '.jpg" /> </div>'
+
+              let totlebill=totalBill;
+
+                     var orderDishs={
+                         name:name,
+                         bill:totlebill,
+                         howManyOrder:z
+                           
+                  
+                     };
+
+                     orderDish.push(orderDishs);
+                           
+                }
+                localStorage.setItem('appData',JSON.stringify(orderDish));
+
+
+            }
+
+            let grossbill = totalBill;
+            let netBill = totalBill
+            if (totalBill > 600) {
+                netBill = totalBill * .90;
+            }
+            // console.log(netBill);
+            // console.log(grossbill)
+            netVlue.innerHTML = `<span>Gross_Bill :${grossbill}      <span>     Net_Bill :${netBill}</span></span>  `
+      
+        }
+        function resetOrder(){
+
+            localStorage.clear();
+
+            // item.checked = false;
+        }
+
+      
+    </script>
+</body>
+
+</html>
