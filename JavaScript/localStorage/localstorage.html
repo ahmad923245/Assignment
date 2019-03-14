@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+                 // simple localStorage files
+    // let a = "ahmad";
+    // let newvar = localStorage.setItem('abc',a);
+
+
+            //Array Files Save to local Storage
+        let files = [1,2,3,4];
+       let newfiles = JSON.stringify(files);
+       let newfiles2= JSON.parse(newfiles);
+
+        let newvar= localStorage.setItem('name',newfiles2);
+
+
+ 
+
+    
+    
+    </script>
+</body>
+</html>
