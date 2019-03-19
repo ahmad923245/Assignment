@@ -1,0 +1,7 @@
+extends for inhertance for example class ClassName extends class name{}
+
+constructor(name,name1) ==> for passig parameters
+
+super(); ==> extended class m agr consctructer bnana h to ye words use krna h
+
+
